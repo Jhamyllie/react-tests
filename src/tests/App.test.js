@@ -54,11 +54,11 @@ describe('Teste se o topo da aplicação contém um conjunto fixo de links de na
     );
     test('Entrar em uma URL desconhecida, leva a uma página Not Found.', () => {
       // usar o history.push();
+      // const pD = screen.getByRole('heading', { name: 'Page requested not found' });
       const { history } = renderWithRouter(<App />);
       history.push('/NotFound');
-      // const pD = screen.getByRole('heading', { name: 'Page requested not found' });
-      const pD = screen.getByText('Page requested not found');
-      expect(pD).toBeInTheDocument();
+      const paginaDesconhecida = screen.getByText('Page requested not found');
+      expect(paginaDesconhecida).toBeInTheDocument();
     });
   });
 
