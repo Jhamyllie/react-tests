@@ -10,6 +10,6 @@ describe('Aplique os teste necessários ao  PokemonDetails', () => {
     const link = screen.getByRole('link', { name: /more details/i });
     userEvent.click(link);
     const nomeDoPokemon = screen.getByRole('heading', { name: /pikachu details/i });
-    expect(nomeDoPokemon).toBeInTheDocument();
+    expect(nomeDoPokemon).not.toBeInTheDocument();
   });
 });
